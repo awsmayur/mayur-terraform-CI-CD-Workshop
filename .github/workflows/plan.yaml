@@ -31,9 +31,13 @@ jobs:
 
       - name: Terraform fmt check
         run: terraform fmt -check -recursive
-
+        working-directory: ./terraformfiles
+        
       - name: Terraform validate
-        run: terraform validate
+        run: terraform validate 
+        working-directory: ./terraformfiles
+        
 
       - name: Terraform plan
         run: terraform plan
+        working-directory: ./terraformfiles
